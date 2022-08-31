@@ -5,21 +5,21 @@ Guide for installation and usage of Croak's Web3 walllet.
 
 NPM
 ```
-npm i croak-wallet-sdk
+npm i glip-wallet-sdk
 ```
 Yarn
 ```
-yarn add croak-wallet-sdk
+yarn add glip-wallet-sdk
 ```
 ## Usage
 
 ### Initialization
-First we need to ensure a div with id `croak-wallet` in the html body.
+First we need to ensure a div with id `glip-wallet` in the html body.
  
 ```<div id="croak-wallet"></div>```
 ``` 
-import { croakWallet } from 'croak-wallet-sdk/wallet';
-await croakWallet.init({
+import { glipWallet } from 'glip-wallet-sdk/wallet';
+await glipWallet.init({
                 chain:'polygon',
                 authNetwork: 'testnet'}
             );
@@ -32,24 +32,24 @@ To use prebuilt UI
 
 ### showConnectModal
 
-```croakWallet.showConnectModal(['google'])```
+```glipWallet.showConnectModal(['google'])```
 
 This will show a modal with a login with google button.
 If you are building your own UI you can directly call the login methods
 ### login
 
-```croakWallet.login('google')```
+```glipWallet.login('google')```
 
 
 ### isConnected
 
 ```
-let isConnected = croakWallet.isConnected();
+let isConnected = glipWallet.isConnected();
 console.log(isConnected); // will be a boolean
 ```
 
 ## logout
-```croakWallet.logout('google')```
+```glipWallet.logout('google')```
 
 
 ## User Details
@@ -58,7 +58,7 @@ Methods to fetch user details
 ### getUserInfo
 Get details about the logged in user.
 ```
-let userInfo = croakWallet.getUserInfo();
+let userInfo = glipWallet.getUserInfo();
 console.log(userInfo.email);
 console.log(userInfo.name);
 console.log(userInfo.profileImage);
@@ -67,7 +67,7 @@ console.log(userInfo.profileImage);
 ### getWalletId
 Get the walletID of the logged in user, You can use this to transfer NFT to some other user.
 ```
-let walletId = croakWallet.getWalledId()
+let walletId = glipWallet.getWalledId()
 ```
 
 ## NFT Fetch/Transfer Methods
@@ -78,24 +78,24 @@ Methods to manage user's NFTs
 Get list of user's NFTs
 
 ```
-let nfts = croakWallet.fetchNFTs()
+let nfts = glipWallet.fetchNFTs()
 ```
 
 
 ### transferNFT
 Transfer a NFT from the wallet of one user to another user.
 ```
-croakWallet.transferNFT(walletIdTo,  nftId,  amount);
+glipWallet.transferNFT(walletIdTo,  nftId,  amount);
 ```
 ### createSellOrder
 
 Start a sell order for token from the wallet. P2P sale.
 ```
-croakWallet.createSellOrder(nftId,  amount,  currencyId,  currencyAmount);
+glipWallet.createSellOrder(nftId,  amount,  currencyId,  currencyAmount);
 ```
 ### createBuyOrder
 Make a buy order from the wallet
 
 ```
-croakWallet.createBuyOrder(nftId, nftAmount, currencyId, currencyAmount);
+glipWallet.createBuyOrder(nftId, nftAmount, currencyId, currencyAmount);
 ```
