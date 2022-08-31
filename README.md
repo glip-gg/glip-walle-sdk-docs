@@ -1,5 +1,5 @@
-# Croak Wallet JS Docs
-Guide for installation and usage of Croak's Web3 walllet.
+# Glip Wallet JS Docs
+Guide for installation and usage of Glip's Web3 walllet.
 
 ## Installation
 
