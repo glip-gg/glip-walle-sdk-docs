@@ -1,4 +1,4 @@
-# Glip Wallet JS Docs
+        # Glip Wallet JS Docs
 Guide for installation and usage of Glip's Web3 walllet.
 
 ## Installation
@@ -40,8 +40,13 @@ const getGlipWallet = async () => {
 
 export default getGlipWallet;
 
-
 ```
+
+Now you can import glip wallet anywhere you need in your app and no need to re initialize it.
+```js
+  let glipWallet = await getGlipWallet()
+```
+
 
 ## Login/Logout
 
@@ -57,7 +62,6 @@ If you are building your own UI you can directly call the login methods
 ### login
 
 ```js
-  let glipWallet = await getGlipWallet()
   glipWallet.login('google')
 ```
 
