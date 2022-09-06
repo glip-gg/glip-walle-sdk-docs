@@ -16,7 +16,7 @@ yarn add glip-wallet-sdk
 ### Initialization
 First we need to ensure a div with id `glip-wallet` in the html body.
  
-```<div id="croak-wallet"></div>```
+```<div id="glip-wallet"></div>```
 
 ```js
 import { glipWalletSDK } from 'glip-wallet-sdk/wallet';
@@ -42,7 +42,7 @@ export default getGlipWallet;
 
 ```
 
-Now you can import glip wallet anywhere you need in your app and no need to re initialize it.
+Now you can import glip wallet anywhere you need in your app and no need to re re-initialize it.
 ```js
   let glipWallet = await getGlipWallet()
 ```
@@ -55,7 +55,7 @@ To use prebuilt UI
 
 ### showConnectModal
 
-```glipWalletSDK.showConnectModal(['google'])```
+```glipWallet.showConnectModal(['google'])```
 
 This will show a modal with a login with google button.
 If you are building your own UI you can directly call the login methods
@@ -68,13 +68,13 @@ If you are building your own UI you can directly call the login methods
 
 ### isConnected
 
-```
-let isConnected = glipWallet.isConnected();
-console.log(isConnected); // will be a boolean
+```js
+let isConnected = await glipWallet.isConnected();
+console.log(isConnected); // will be a boolean.
 ```
 
 ## logout
-```glipWallet.logout('google')```
+```await glipWallet.logout()```
 
 
 ## User Details
@@ -82,18 +82,39 @@ Methods to fetch user details
 
 ### getUserInfo
 Get details about the logged in user.
-```
-let userInfo = glipWallet.getUserInfo();
+```js
+let userInfo = await glipWallet.getUserInfo();
 console.log(userInfo.email);
 console.log(userInfo.name);
 console.log(userInfo.profileImage);
+console.log(userInfo.publicAddress);
 ```
 
 ### getWalletId
-Get the walletID of the logged in user, You can use this to transfer NFT to some other user.
+Get the Glip walletID of the logged in user, You can use this to transfer NFT to some other user.
 ```
-let walletId = glipWallet.getWalledId()
+let walletId = glipWallet.getWalletId()
 ```
+
+
+### signTransaction
+Sign a transaction using the user's private key.
+```js
+let signedTx = await glipWallet.signTransaction({
+    to: '0x0000000000000000000000000000000000000000',
+    value: '0x0',
+    data: '0x0',
+    chainId: 137,
+    nonce: 0,
+    gasPrice: 0,
+    gasLimit: 0,
+    from: '0x0000000000000000000000000000000000000000'
+});
+
+```
+
+
+
 <!---
 ## NFT Fetch/Transfer Methods
 
