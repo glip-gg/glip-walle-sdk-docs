@@ -69,7 +69,7 @@ Get the walletID of the logged in user, You can use this to transfer NFT to some
 ```
 let walletId = glipWallet.getWalledId()
 ```
-
+<!---
 ## NFT Fetch/Transfer Methods
 
 Methods to manage user's NFTs
@@ -99,3 +99,4 @@ Make a buy order from the wallet
 ```
 glipWallet.createBuyOrder(nftId, nftAmount, currencyId, currencyAmount);
 ```
+-->
