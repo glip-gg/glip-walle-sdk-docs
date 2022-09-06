@@ -1,4 +1,4 @@
-        # Glip Wallet JS Docs
+# Glip Wallet JS Docs
 Guide for installation and usage of Glip's Web3 walllet.
 
 ## Installation
