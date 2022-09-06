@@ -50,13 +50,16 @@ To use prebuilt UI
 
 ### showConnectModal
 
-```glipWallet.showConnectModal(['google'])```
+```glipWalletSDK.showConnectModal(['google'])```
 
 This will show a modal with a login with google button.
 If you are building your own UI you can directly call the login methods
 ### login
 
-```glipWallet.login('google')```
+```js
+  let glipWallet = await getGlipWallet()
+  glipWallet.login('google')
+```
 
 
 ### isConnected
