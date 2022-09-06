@@ -18,11 +18,28 @@ First we need to ensure a div with id `glip-wallet` in the html body.
  
 ```<div id="croak-wallet"></div>```
 ``` 
-import { glipWallet } from 'glip-wallet-sdk/wallet';
-await glipWallet.init({
-                chain:'polygon',
-                authNetwork: 'testnet'}
-            );
+import { glipWalletSDK } from 'glip-wallet-sdk/wallet';
+let initializedGlipWallet = false;
+
+const getGlipWallet = async () => {
+    if(initializedGlipWallet) {
+        return initializedGlipWallet;
+    }
+    await glipWalletSDK.init({
+        // add any supported chain here.
+        chain:'polygon',
+        // add testnet for testing and cyan for production
+        authNetwork: 'cyan',
+        // add your clientIdentifier here and replace testing one
+        clientIdentifier: '62de50119081671256277620'
+    });
+    return glipWalletSDK;
+};
+
+
+export default getGlipWallet;
+
+
 ```
 
 ## Login/Logout
