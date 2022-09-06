@@ -17,7 +17,8 @@ yarn add glip-wallet-sdk
 First we need to ensure a div with id `glip-wallet` in the html body.
  
 ```<div id="croak-wallet"></div>```
-``` 
+
+```js
 import { glipWalletSDK } from 'glip-wallet-sdk/wallet';
 let initializedGlipWallet = false;
 
