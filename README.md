@@ -27,16 +27,13 @@ const getGlipWallet = async () => {
         return initializedGlipWallet;
     }
     await glipWalletSDK.init({
-        // add any supported chain here.
         chain:'polygon',
-        // add testnet for testing and cyan for production
         authNetwork: 'cyan',
-        // add your clientIdentifier here and replace testing one
-        clientIdentifier: '62de50119081671256277620'
+        clientIdentifier: '63020e1ef81e3742a278846a'
     });
+    initializedGlipWallet = glipWalletSDK;
     return glipWalletSDK;
 };
-
 
 export default getGlipWallet;
 
