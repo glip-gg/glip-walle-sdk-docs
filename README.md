@@ -98,9 +98,9 @@ let walletId = glipWallet.getWalletId()
 
 
 ### signTransaction
-Sign a transaction using the user's private key.
+Sign a transaction using the user's private key. This will redirect the user to glipgg in mobile.
 ```js
-let signedTx = await glipWallet.signTransaction({
+let signedTx = glipWallet.signTransaction({
     to: '0x0000000000000000000000000000000000000000',
     value: '0x0',
     data: '0x0',
@@ -110,6 +110,13 @@ let signedTx = await glipWallet.signTransaction({
     gasLimit: 0,
     from: '0x0000000000000000000000000000000000000000'
 });
+
+```
+
+### getSignedTransaction
+This will fetch the user's signed transaction.
+```js
+let signedTx = await glipWallet.getSignedTransaction();
 
 ```
 
