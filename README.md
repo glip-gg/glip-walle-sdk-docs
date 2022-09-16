@@ -27,7 +27,7 @@ const getGlipWallet = async () => {
         return initializedGlipWallet;
     }
     await glipWalletSDK.init({
-        chain:'polygon',
+        chainId: 80001,
         authNetwork: 'cyan',
         clientIdentifier: '63020e1ef81e3742a278846a'
     });
@@ -113,10 +113,10 @@ let signedTx = glipWallet.signTransaction({
 ### getSignedTransaction
 This will fetch the user's signed transaction.
 ```js
-let signedTx = await glipWallet.getSignedTransaction();
+let signer = await glipWallet.getSigner();
+signer.getSignedTransaction();
 
 ```
-
 
 
 <!---
