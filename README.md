@@ -98,7 +98,7 @@ let walletId = glipWallet.getWalletId()
 Sign a transaction using the user's private key. This will redirect the user to glipgg in mobile.
 ```js
 let signer = await glipWallet.getSigner();
-let signedTx = signer.signTransaction({
+signer.signTransaction({
     to: '0x0000000000000000000000000000000000000000',
     value: '0x0',
     data: '0x0',
