@@ -86,20 +86,20 @@ console.log(userInfo.name);
 console.log(userInfo.profileImage);
 console.log(userInfo.publicAddress);
 ```
-
+<!---
 ### getWalletId
 Get the Glip walletID of the logged in user, You can use this to transfer NFT to some other user.
 ```
 let walletId = glipWallet.getWalletId()
 ```
-
-
+--->
+## Wallet/Signer Operations
 ### signTransaction
 Sign a transaction using the user's private key. This will redirect the user to glipgg in mobile.
 ```js
 let signer = await glipWallet.getSigner();
 let displayMessage = "This transaction transfers 0 value";
-signer.signTransaction({
+let signedTx = signer.signTransaction({
     to: '0x0000000000000000000000000000000000000000',
     value: '0x0',
     data: '0x0',
@@ -109,16 +109,8 @@ signer.signTransaction({
     gasLimit: 0,
     from: '0x0000000000000000000000000000000000000000'
 }, displayMessage);
-
+console.log(signedTx);
 ```
-
-### getSignedTransaction
-This will fetch the user's signed transaction.
-```js
-let signedTx = await glipWallet.getSignedTransaction();
-
-```
-
 
 
 <!---
