@@ -1,5 +1,8 @@
 # Glip Wallet JS Docs
 Guide for installation and usage of Glip's Web3 walllet.
+Glip wallet through it's SDK provides a signer using which a user's transaction can be signed.
+It also contains a iframe based UI element which can be embedded into any webpage.
+The UI contains features to check balance, change currency, transfer and swap tokens.
 
 ## Installation
 
