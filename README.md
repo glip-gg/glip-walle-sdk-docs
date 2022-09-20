@@ -111,7 +111,16 @@ let signedTx = signer.signTransaction({
 }, displayMessage);
 console.log(signedTx);
 ```
+## Wallet UI
+### Show the wallet UI
+```js
+glipWallet.showWallet();
+```
 
+### Hide the wallet UI
+```js
+glipWallet.hideWallet();
+```
 
 <!---
 ## NFT Fetch/Transfer Methods
