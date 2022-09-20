@@ -101,8 +101,8 @@ let signer = await glipWallet.getSigner();
 let displayMessage = "This transaction transfers 0 value";
 let signedTx = signer.signTransaction({
     to: '0x0000000000000000000000000000000000000000',
-    value: '0x0',
-    data: '0x0',
+    value: '0x00',
+    data: '0x00',
     chainId: 137,
     nonce: 0,
     gasPrice: 0,
